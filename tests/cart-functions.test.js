@@ -56,6 +56,39 @@ describe("isSufficientPayment", () => {
     //Assert
     expect(isSufficient).toBe(true);
   });
+  test("When payment is 7 and total is 10 then it returns false", () => {
+    //Arrange
+    const total = 10;
+    const payment = 7;
+
+    //Act
+    const isSufficient = isSufficientPayment(payment, total);
+
+    //Assert
+    expect(isSufficient).toBe(false);
+  });
+  test("When payment is 3 and total is 3 then it returns true", () => {
+    //Arrange
+    const total = 3;
+    const payment = 3;
+
+    //Act
+    const isSufficient = isSufficientPayment(payment, total);
+
+    //Assert
+    expect(isSufficient).toBe(true);
+  });
+  test("When payment is 1 and total is 2 then it returns false", () => {
+    //Arrange
+    const total = 2;
+    const payment = 1;
+
+    //Act
+    const isSufficient = isSufficientPayment(payment, total);
+
+    //Assert
+    expect(isSufficient).toBe(false);
+  });
 });
 
 describe("calculateTotal", () => {
@@ -113,7 +146,7 @@ describe("calculateTotal", () => {
 });
 
 describe("addItem", () => {
-  test("", () => {
+  test("Given an empty array, an item and a price, return an array with one item", () => {
     const array = [];
 
     addItem(array, "Beans", 3);
