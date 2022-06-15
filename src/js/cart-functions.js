@@ -21,9 +21,8 @@ function calculateTotal(itmesArray) {
 function addItem(itemsArray, name, price) {
   const obj = { name: name, price: price };
   itemsArray.push(obj);
-
-  return itemsArray;
 }
+
 function removeItem(itemsArray, index) {
   itemsArray.splice(index, 1);
 }

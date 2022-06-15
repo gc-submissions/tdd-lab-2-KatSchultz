@@ -146,7 +146,7 @@ describe("calculateTotal", () => {
 });
 
 describe("addItem", () => {
-  test("Given an empty array, an item and a price, return an array with one item", () => {
+  test("Adds item to an empty array", () => {
     const array = [];
 
     addItem(array, "Beans", 3);
