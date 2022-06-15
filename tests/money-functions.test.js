@@ -66,7 +66,7 @@ describe("formatCurrency", () => {
 });
 
 describe("getCoins", () => {
-  test("add getCoins tests here", () => {
+  test("Return 1 quarter, 1 nickel, and 2 pennies when given 32 cents", () => {
     const cents = 32;
 
     const coins = getCoins(cents);
@@ -76,6 +76,18 @@ describe("getCoins", () => {
       dimes: 0,
       nickels: 1,
       pennies: 2,
+    });
+  });
+  test("retun one dime if given 10 cents", () => {
+    const cents = 10;
+
+    const coins = getCoins(cents);
+
+    expect(coins).toEqual({
+      quarters: 0,
+      dimes: 1,
+      nickels: 0,
+      pennies: 0,
     });
   });
 });
