@@ -90,4 +90,28 @@ describe("getCoins", () => {
       pennies: 0,
     });
   });
+  test("Return 1 quarter and 2 pennies when given 27 cents", () => {
+    const cents = 27;
+
+    const coins = getCoins(cents);
+
+    expect(coins).toEqual({
+      quarters: 1,
+      dimes: 0,
+      nickels: 0,
+      pennies: 2,
+    });
+  });
+  test("Return 2 quarters, 1 dime, 1 nickel, and 3 pennies when given 68 cents", () => {
+    const cents = 68;
+
+    const coins = getCoins(cents);
+
+    expect(coins).toEqual({
+      quarters: 2,
+      dimes: 1,
+      nickels: 1,
+      pennies: 3,
+    });
+  });
 });
