@@ -153,7 +153,7 @@ describe("addItem", () => {
 
     expect(array).toContainEqual({ name: "Beans", price: 3 });
   });
-  test("", () => {
+  test("Given an array with one item, return an array with 2 items", () => {
     const array = [{ name: "Beans", price: 3 }];
 
     addItem(array, "Sugar", 2);
@@ -163,7 +163,7 @@ describe("addItem", () => {
       { name: "Sugar", price: 2 }
     );
   });
-  test("", () => {
+  test("Given an array with 3 items, return an array with 4 items", () => {
     const array = [
       { name: "Beans", price: 3 },
       { name: "Sugar", price: 2 },
@@ -182,7 +182,7 @@ describe("addItem", () => {
 });
 
 describe("removeItem", () => {
-  test("add removeItem tests here", () => {
+  test("Removes first element of an array", () => {
     const itemsArray = [
       { name: "Beans", price: 3 },
       { name: "Sugar", price: 5 },
@@ -193,18 +193,29 @@ describe("removeItem", () => {
 
     expect(itemsArray).not.toContainEqual({ name: "Beans", price: 3 });
   });
-  test("add removeItem tests here", () => {
+  test("Remove last element from array", () => {
     const itemsArray = [
       { name: "Beans", price: 3 },
       { name: "Sugar", price: 5 },
       { name: "Candy", price: 1 },
     ];
 
-    removeItem(itemsArray, 0);
+    removeItem(itemsArray, itemsArray.length - 1);
 
-    expect(itemsArray).not.toContainEqual({ name: "Beans", price: 3 });
+    expect(itemsArray).not.toContainEqual({ name: "Candy", price: 1 });
   });
-  test("add removeItem tests here", () => {
+  test("Remove middle element from array of 3 elements", () => {
+    const itemsArray = [
+      { name: "Beans", price: 3 },
+      { name: "Sugar", price: 5 },
+      { name: "Candy", price: 1 },
+    ];
+
+    removeItem(itemsArray, 1);
+
+    expect(itemsArray).not.toContainEqual({ name: "Sugar", price: 5 });
+  });
+  test("Remove element from array of one item", () => {
     const itemsArray = [{ name: "Beans", price: 3 }];
 
     removeItem(itemsArray, 0);
