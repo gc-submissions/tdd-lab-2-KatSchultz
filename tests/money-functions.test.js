@@ -71,6 +71,11 @@ describe("getCoins", () => {
 
     const coins = getCoins(cents);
 
-    expect(coins).toBe({ quarter: 1, dimes: 0, nickels: 1, pennies: 2 });
+    expect(coins).toEqual({
+      quarters: 1,
+      dimes: 0,
+      nickels: 1,
+      pennies: 2,
+    });
   });
 });
